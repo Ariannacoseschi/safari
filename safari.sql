@@ -48,3 +48,13 @@ INSERT INTO animal(name,type,age,enclosureId) VALUES('Zsolt','Shark',34,2);
 INSERT INTO animal(name,type,age,enclosureId) VALUES('Colin','Lion',35,1);
 INSERT INTO animal(name,type,age,enclosureId) VALUES('Anna','Lioness',30,1);
 
+SELECT enclosure.name, animal.name FROM enclosure
+INNER JOIN animal
+ON enclosure.id = animal.enclosureId;
+
+SELECT staff.name, enclosure.name 
+FROM staff
+INNER JOIN assignment
+ON staff.id = assignment.employeeId
+INNER JOIN enclosure
+ON enclosure.id = assignment.enclosureId;
